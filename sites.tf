@@ -76,8 +76,8 @@ resource "cloudflare_pages_project" "saligrama-photo" {
     type = "github"
     config {
       owner                         = "saligrama"
-      repo_name                     = "notes"
-      production_branch             = "hugo-dev"
+      repo_name                     = "photo"
+      production_branch             = "main"
       deployments_enabled           = true
       production_deployment_enabled = true
     }
