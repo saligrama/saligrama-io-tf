@@ -6,11 +6,11 @@ resource "cloudflare_pages_project" "saligrama" {
   source {
     type = "github"
     config {
-      owner                          = "saligrama"
-      repo                           = "saligrama.github.io"
-      branch                         = "main"
-      deployments_enabled            = true
-      production_deployments_enabled = true
+      owner                         = "saligrama"
+      repo_name                     = "saligrama.github.io"
+      production_branch             = "main"
+      deployments_enabled           = true
+      production_deployment_enabled = true
     }
   }
 
