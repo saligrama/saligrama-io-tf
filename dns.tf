@@ -28,7 +28,7 @@ resource "cloudflare_record" "root_saligrama_io_gh_pages_111" {
   zone_id = cloudflare_zone.saligrama_io.id
   type    = "A"
   name    = "@"
-  value   = "185.199.110.153"
+  value   = "185.199.111.153"
 }
 
 resource "cloudflare_record" "_github_pages_challenge_saligrama_saligrama_io" {
