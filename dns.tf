@@ -11,48 +11,6 @@ resource "cloudflare_record" "root_saligrama_io_cf_pages" {
   proxied = true
 }
 
-# resource "cloudflare_record" "root_saligrama_io_gh_pages_108" {
-#   zone_id = cloudflare_zone.saligrama_io.id
-#   type    = "A"
-#   name    = "@"
-#   value   = "185.199.108.153"
-# }
-
-# resource "cloudflare_record" "root_saligrama_io_gh_pages_109" {
-#   zone_id = cloudflare_zone.saligrama_io.id
-#   type    = "A"
-#   name    = "@"
-#   value   = "185.199.109.153"
-# }
-
-# resource "cloudflare_record" "root_saligrama_io_gh_pages_110" {
-#   zone_id = cloudflare_zone.saligrama_io.id
-#   type    = "A"
-#   name    = "@"
-#   value   = "185.199.110.153"
-# }
-
-# resource "cloudflare_record" "root_saligrama_io_gh_pages_111" {
-#   zone_id = cloudflare_zone.saligrama_io.id
-#   type    = "A"
-#   name    = "@"
-#   value   = "185.199.111.153"
-# }
-
-resource "cloudflare_record" "_github_pages_challenge_saligrama_saligrama_io" {
-  zone_id = cloudflare_zone.saligrama_io.id
-  type    = "TXT"
-  name    = "_github-pages-challenge-saligrama"
-  value   = "ceaf204cce3688093e4b5481600300"
-}
-
-resource "cloudflare_record" "www_saligrama_io_gh_pages_cname" {
-  zone_id = cloudflare_zone.saligrama_io.id
-  type    = "CNAME"
-  name    = "www"
-  value   = "saligrama.github.io"
-}
-
 resource "cloudflare_record" "catshare_saligrama_io" {
   zone_id = cloudflare_zone.saligrama_io.id
   type    = "A"
