@@ -3,33 +3,41 @@ resource "cloudflare_zone" "saligrama_io" {
   zone       = "saligrama.io"
 }
 
-resource "cloudflare_record" "root_saligrama_io_gh_pages_108" {
+resource "cloudflare_record" "root_saligrama_io_cf_pages" {
   zone_id = cloudflare_zone.saligrama_io.id
-  type    = "A"
+  type    = "CNAME"
   name    = "@"
-  value   = "185.199.108.153"
+  value   = cloudflare_pages_project.saligrama.pages_domain
+  proxied = true
 }
 
-resource "cloudflare_record" "root_saligrama_io_gh_pages_109" {
-  zone_id = cloudflare_zone.saligrama_io.id
-  type    = "A"
-  name    = "@"
-  value   = "185.199.109.153"
-}
+# resource "cloudflare_record" "root_saligrama_io_gh_pages_108" {
+#   zone_id = cloudflare_zone.saligrama_io.id
+#   type    = "A"
+#   name    = "@"
+#   value   = "185.199.108.153"
+# }
 
-resource "cloudflare_record" "root_saligrama_io_gh_pages_110" {
-  zone_id = cloudflare_zone.saligrama_io.id
-  type    = "A"
-  name    = "@"
-  value   = "185.199.110.153"
-}
+# resource "cloudflare_record" "root_saligrama_io_gh_pages_109" {
+#   zone_id = cloudflare_zone.saligrama_io.id
+#   type    = "A"
+#   name    = "@"
+#   value   = "185.199.109.153"
+# }
 
-resource "cloudflare_record" "root_saligrama_io_gh_pages_111" {
-  zone_id = cloudflare_zone.saligrama_io.id
-  type    = "A"
-  name    = "@"
-  value   = "185.199.111.153"
-}
+# resource "cloudflare_record" "root_saligrama_io_gh_pages_110" {
+#   zone_id = cloudflare_zone.saligrama_io.id
+#   type    = "A"
+#   name    = "@"
+#   value   = "185.199.110.153"
+# }
+
+# resource "cloudflare_record" "root_saligrama_io_gh_pages_111" {
+#   zone_id = cloudflare_zone.saligrama_io.id
+#   type    = "A"
+#   name    = "@"
+#   value   = "185.199.111.153"
+# }
 
 resource "cloudflare_record" "_github_pages_challenge_saligrama_saligrama_io" {
   zone_id = cloudflare_zone.saligrama_io.id
