@@ -7,7 +7,7 @@ resource "cloudflare_record" "root_saligrama_io_cf_pages" {
   zone_id = cloudflare_zone.saligrama_io.id
   type    = "CNAME"
   name    = "@"
-  value   = cloudflare_pages_project.saligrama.pages_domain
+  value   = cloudflare_pages_project.saligrama.subdomain
   proxied = true
 }
 
