@@ -98,7 +98,7 @@ resource "cloudflare_pages_project" "saligrama-photo" {
 
 resource "cloudflare_pages_project" "sadsingles" {
   account_id        = var.cloudflare_account_id
-  name              = "saligrama"
+  name              = "sadsingles"
   production_branch = "main"
 
   source {
