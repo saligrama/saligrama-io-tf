@@ -90,3 +90,11 @@ resource "cloudflare_zone" "root_sad_singles" {
   account_id = var.cloudflare_account_id
   zone       = "sad.singles"
 }
+
+resource "cloudflare_record" "root_sad_singles" {
+  zone_id = cloudflare_zone.root_sad_singles.id
+  name    = "@"
+  value   = cloudflare_pages_project.sadsingles.subdomain
+  type    = "CNAME"
+  proxied = true
+}

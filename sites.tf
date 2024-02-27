@@ -113,6 +113,12 @@ resource "cloudflare_pages_project" "sadsingles" {
   }
 }
 
+resource "cloudflare_pages_domain" "sadsingles" {
+  account_id   = var.cloudflare_account_id
+  project_name = cloudflare_pages_project.sadsingles.name
+  domain       = "sad.singles"
+}
+
 resource "cloudflare_pages_project" "catshare" {
   account_id        = var.cloudflare_account_id
   name              = "catshare"
