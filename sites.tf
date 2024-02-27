@@ -113,6 +113,29 @@ resource "cloudflare_pages_project" "sadsingles" {
   }
 }
 
+resource "cloudflare_pages_project" "catshare" {
+  account_id        = var.cloudflare_account_id
+  name              = "catshare"
+  production_branch = "main"
+
+  source {
+    type = "github"
+    config {
+      owner                         = "saligrama"
+      repo_name                     = "catshare-serverless"
+      production_branch             = "main"
+      deployments_enabled           = true
+      production_deployment_enabled = true
+    }
+  }
+
+  deployment_configs {
+    production {
+      d1_databases = cloudflare_d1_database.catshare_db
+    }
+  }
+}
+
 resource "cloudflare_d1_database" "catshare_db" {
   account_id = var.cloudflare_account_id
   name       = "catshare"
