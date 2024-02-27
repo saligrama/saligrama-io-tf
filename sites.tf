@@ -112,3 +112,8 @@ resource "cloudflare_pages_project" "sadsingles" {
     }
   }
 }
+
+resource "cloudflare_d1_database" "catshare_db" {
+  account_id = var.cloudflare_account_id
+  name       = "catshare"
+}
