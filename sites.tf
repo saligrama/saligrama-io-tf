@@ -148,3 +148,9 @@ resource "cloudflare_d1_database" "catshare_db" {
   account_id = var.cloudflare_account_id
   name       = "catshare"
 }
+
+resource "cloudflare_pages_domain" "catshare" {
+  account_id   = var.cloudflare_account_id
+  project_name = cloudflare_pages_project.catshare.name
+  domain       = "catshare.saligrama.io"
+}

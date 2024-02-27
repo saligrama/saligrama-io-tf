@@ -11,11 +11,12 @@ resource "cloudflare_record" "root_saligrama_io_cf_pages" {
   proxied = true
 }
 
-resource "cloudflare_record" "catshare_saligrama_io" {
+resource "cloudflare_record" "catshare_saligrama_io_cf_pages" {
   zone_id = cloudflare_zone.saligrama_io.id
-  type    = "A"
+  type    = "CNAME"
   name    = "catshare"
-  value   = "147.182.238.196"
+  value   = cloudflare_pages_project.catshare.subdomain
+  proxied = true
 }
 
 resource "cloudflare_record" "root_saligrama_io_google_site_verification" {
