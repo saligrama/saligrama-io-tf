@@ -85,3 +85,8 @@ resource "cloudflare_record" "mx_alt4_google_saligrama_io" {
   type     = "MX"
   priority = 10
 }
+
+resource "cloudflare_zone" "root_sad_singles" {
+  account_id = var.cloudflare_account_id
+  zone       = "sad.singles"
+}
