@@ -138,7 +138,7 @@ resource "cloudflare_pages_project" "catshare" {
   deployment_configs {
     production {
       d1_databases = {
-        USERS_DB = cloudflare_d1_database.catshare_db
+        USERS_DB = cloudflare_d1_database.catshare_db.id
       }
     }
   }
