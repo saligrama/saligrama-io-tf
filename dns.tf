@@ -100,14 +100,14 @@ resource "cloudflare_record" "root_sad_singles" {
   proxied = true
 }
 
-resource "cloudflare_web_analytics" "saligrama_io" {
-  account_id = var.cloudflare_account_id
-  zone_id    = cloudflare_zone.saligrama_io.id
-  enabled    = true
+resource "cloudflare_web_analytics_site" "saligrama_io" {
+  account_id      = var.cloudflare_account_id
+  zone_id         = cloudflare_zone.saligrama_io.id
+  auto_install    = true
 }
 
-resource "cloudflare_web_analytics" "root_sad_singles" {
-  account_id = var.cloudflare_account_id
-  zone_id    = cloudflare_zone.root_sad_singles.id
-  enabled    = true
+resource "cloudflare_web_analytics_site" "root_sad_singles" {
+  account_id      = var.cloudflare_account_id
+  zone_id         = cloudflare_zone.root_sad_singles.id
+  auto_install    = true
 }
