@@ -19,6 +19,14 @@ resource "cloudflare_pages_project" "saligrama" {
     destination_dir = "public"
     root_dir        = ""
   }
+
+  deployment_configs {
+    production {
+      environment_variables = {
+        SKIP_DEPENDENCY_INSTALL = true
+      }
+    }
+  }
 }
 
 resource "cloudflare_pages_domain" "saligrama" {
