@@ -21,11 +21,11 @@ resource "cloudflare_pages_project" "saligrama" {
   }
 }
 
-# resource "cloudflare_pages_domain" "saligrama" {
-#   account_id   = var.cloudflare_account_id
-#   project_name = cloudflare_pages_project.saligrama.name
-#   domain       = "saligrama.io"
-# }
+resource "cloudflare_pages_domain" "saligrama" {
+  account_id   = var.cloudflare_account_id
+  project_name = cloudflare_pages_project.saligrama.name
+  domain       = "saligrama.io"
+}
 
 resource "cloudflare_pages_project" "saligrama-blog" {
   account_id        = var.cloudflare_account_id
