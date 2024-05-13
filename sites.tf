@@ -7,7 +7,7 @@ resource "cloudflare_pages_project" "saligrama" {
     type = "github"
     config {
       owner                         = "saligrama"
-      repo_name                     = "saligrama.github.io"
+      repo_name                     = "web"
       production_branch             = "main"
       deployments_enabled           = true
       production_deployment_enabled = true
@@ -15,7 +15,7 @@ resource "cloudflare_pages_project" "saligrama" {
   }
 
   build_config {
-    build_command   = "hugo --gc --minify"
+    build_command   = "npm i --force && hugo --gc --minify"
     destination_dir = "public"
     root_dir        = ""
   }
