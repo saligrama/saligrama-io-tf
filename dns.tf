@@ -99,15 +99,3 @@ resource "cloudflare_record" "root_sad_singles" {
   type    = "CNAME"
   proxied = true
 }
-
-resource "cloudflare_web_analytics_site" "saligrama_io" {
-  account_id      = var.cloudflare_account_id
-  zone_tag        = cloudflare_zone.saligrama_io.id
-  auto_install    = true
-}
-
-resource "cloudflare_web_analytics_site" "root_sad_singles" {
-  account_id      = var.cloudflare_account_id
-  zone_tag        = cloudflare_zone.root_sad_singles.id
-  auto_install    = true
-}
