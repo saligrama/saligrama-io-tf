@@ -87,6 +87,13 @@ resource "cloudflare_record" "mx_alt4_google_saligrama_io" {
   priority = 10
 }
 
+resource "cloudflare_record" "atproto_saligrama_io" {
+  zone_id = cloudflare_zone.saligrama_io.id
+  type    = "TXT"
+  name    = "_atproto"
+  value   = "did=did:plc:qp46jbzx3g37ksr6uibxtflm"
+}
+
 resource "cloudflare_zone" "root_sad_singles" {
   account_id = var.cloudflare_account_id
   zone       = "sad.singles"
